@@ -19,4 +19,6 @@ class ApplicationController < ActionController::Base
       @current_user ||= User.find_by(remember_digest: remember_token)
     end
   end
+
+  
 end
