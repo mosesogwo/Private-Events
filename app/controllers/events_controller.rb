@@ -21,6 +21,8 @@ before_action  :logged_in?, only: :new
 
   def index
     @events = Event.all
+    @past_events = Event.past
+    @upcoming_events = Event.upcoming
   end
 
   private
