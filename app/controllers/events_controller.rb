@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+before_action  :logged_in?, only: :new 
+
   def new
     @event = Event.new
   end
@@ -24,5 +26,9 @@ class EventsController < ApplicationController
   private
     def event_params
       params.require(:event).permit(:name, :date)
+    end
+
+    def logged_in?
+      redirect_to login_path unless current_user
     end
 end
