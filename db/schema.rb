@@ -10,9 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_09_18_122148) do
-=======
+
 ActiveRecord::Schema.define(version: 2019_09_20_095247) do
 
   create_table "attendances", force: :cascade do |t|
@@ -23,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_09_20_095247) do
     t.index ["attended_event_id"], name: "index_attendances_on_attended_event_id"
     t.index ["attendee_id"], name: "index_attendances_on_attendee_id"
   end
->>>>>>> 666253f81126c4b269e5de4d51c42f457096dd04
+
 
   create_table "events", force: :cascade do |t|
     t.string "name"
