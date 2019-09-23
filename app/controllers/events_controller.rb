@@ -8,9 +8,10 @@ before_action  :logged_in?, only: :new
   def create
     @event = current_user.created_events.build(event_params)
     if @event.save
-      #Success
+      flash[:success] = "Event successfully created"
       redirect_to event_path(@event)
     else
+      flash.now[:danger] = "Event creation unsuccessful"
       render 'new'
     end
   end
