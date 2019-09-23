@@ -13,6 +13,10 @@
     <% if current_user %>
       <h5>Signed in as: <%= current_user.name %></h5>
     <% end %>
+    <%= link_to "Login", login_path %>
+    <%= link_to "Sign up", new_user_path %>
+    <%= link_to "Create Event", new_event_path %>
+    <%= link_to "All Events", events_path %>
     <%= yield %>
   </body>
 </html>
