@@ -10,6 +10,9 @@
   </head>
 
   <body>
+  <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+  <% end %>
     <% if current_user %>
       <h5>Signed in as: <%= current_user.name %></h5>
     <% end %>
