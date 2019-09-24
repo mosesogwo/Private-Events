@@ -24,5 +24,22 @@ RSpec.describe Event, type: :model do
         expect(@event).to_not be_valid
       end
     end
+
+    describe "associations" do
+      it "belongs to a User(creator)" do
+        assc = described_class.reflect_on_association(:creator)
+        expect(assc.macro).to eql :belongs_to
+      end
+
+      it "has many attendances" do
+        assc = described_class.reflect_on_association(:attendances)
+        expect(assc.macro).to eql :has_many
+      end
+
+      it "has many attendees" do
+        assc = described_class.reflect_on_association(:attendees)
+        expect(assc.macro).to eql :has_many
+      end
+    end
 end
 
