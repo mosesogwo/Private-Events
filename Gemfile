@@ -6,7 +6,6 @@ ruby '2.6.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
 
-
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use Puma as the app server
@@ -48,7 +47,7 @@ group :development, :test do
   # Capybara, the library that allows us to interact with the browser using Ruby
   gem 'capybara'
 
-  # This gem helps Capybara interact with the web browser 
+  # This gem helps Capybara interact with the web browser
   gem 'webdrivers'
 end
 
@@ -60,7 +59,6 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
-
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

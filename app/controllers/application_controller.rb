@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    attr_writer :current_user
+  attr_writer :current_user
 
   def log_in(user)
     session[:user_id] = user.id
@@ -21,5 +21,4 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
-  
 end
