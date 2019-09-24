@@ -25,5 +25,22 @@ RSpec.describe User, type: :model do
             @user.password = nil
             expect(@user).to_not be_valid
         end
+
+        describe "Associations" do
+            it "has many created_events" do
+                assc = described_class.reflect_on_association(:created_events)
+                expect(assc.macro).to eql :has_many
+            end
+
+            it "has many attendances" do
+                assc = described_class.reflect_on_association(:attendances)
+                expect(assc.macro).to eql :has_many
+            end
+
+            it "has many attended_events" do
+                assc = described_class.reflect_on_association(:attended_events)
+                expect(assc.macro).to eql :has_many
+            end
+        end
     end
 end
