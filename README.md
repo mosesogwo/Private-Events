@@ -27,6 +27,5 @@ Visit localhost:3000/login
 ```
 Visit localhost:3000/events/new
 ```
-
 Note: You must be logged in to create an event.
 
