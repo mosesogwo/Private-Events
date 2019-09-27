@@ -7,7 +7,9 @@ RSpec.feature 'Event managment', type: :feature do
     visit new_event_path
     expect(page).to have_content('Login here')
   end
+end
 
+RSpec.feature 'Event managment', type: :feature do
   scenario 'create event when user is logged in' do
     sign_up_with('Paul', 'paul@gmail.com', '123456')
     sign_in_with('paul@gmail.com', '123456')
@@ -17,19 +19,19 @@ RSpec.feature 'Event managment', type: :feature do
     click_button 'Create event'
     expect(page).to have_content('Event successfully created')
   end
+end
 
-  def sign_up_with(name, email, password)
-    visit new_user_path
-    fill_in 'Name', with: name
-    fill_in 'Email', with: email
-    fill_in 'Password', with: password
-    click_on 'Submit'
-  end
+def sign_up_with(name, email, password)
+  visit new_user_path
+  fill_in 'Name', with: name
+  fill_in 'Email', with: email
+  fill_in 'Password', with: password
+  click_on 'Submit'
+end
 
-  def sign_in_with(_email, _password)
-    visit login_path
-    fill_in 'Email', with: 'paul@gmail.com'
-    fill_in 'Password', with: '123456'
-    click_button 'Login'
-  end
+def sign_in_with(_email, _password)
+  visit login_path
+  fill_in 'Email', with: 'paul@gmail.com'
+  fill_in 'Password', with: '123456'
+  click_button 'Login'
 end
