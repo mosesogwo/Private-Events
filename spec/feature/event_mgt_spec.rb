@@ -15,7 +15,7 @@ RSpec.feature 'Event managment', type: :feature do
     sign_in_with('paul@gmail.com', '123456')
     click_on 'Create Event'
     fill_in 'Name', with: "Paul's Event"
-    page.find('#event_date').set('2014-01-01')
+    page.find('#event_date').set('2040-01-01')
     click_button 'Create event'
     expect(page).to have_content('Event successfully created')
   end

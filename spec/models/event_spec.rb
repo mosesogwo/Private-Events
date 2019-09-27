@@ -26,6 +26,11 @@ RSpec.describe Event, type: :model do
       @event.date = nil
       expect(@event).to_not be_valid
     end
+
+    it 'is not valid with a past date' do
+      @event.date = '05-12-1998'
+      expect(@event).to_not be_valid
+    end
   end
 
   describe 'associations' do
