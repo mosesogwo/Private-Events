@@ -9,9 +9,10 @@ RSpec.describe Event, type: :model do
   end
 
   describe 'creation' do
-    it 'should have one item created after being created' do
-      expect{ Event.create!(name: 'event_name', date: '05-12-2019', creator_id: 1)
-      }.to change{Event.all.count}.by(1)
+    it 'should have one more item after being created' do
+      expect do
+        Event.create!(name: 'event_name', date: '05-12-2019', creator_id: 1)
+      end.to change { Event.all.count }.by(1)
     end
   end
 

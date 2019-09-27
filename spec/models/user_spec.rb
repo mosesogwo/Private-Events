@@ -8,8 +8,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'creation' do
-    it 'should have one item created after being created' do
-      expect(User.all.count).to eq(1)
+    it 'should have one more item after being created' do
+      expect do
+        User.create!(name: 'Uche', email: 'uche@gmail.com', password: '123asdf')
+      end.to change { User.all.count }.by(1)
     end
   end
   describe 'validations' do
