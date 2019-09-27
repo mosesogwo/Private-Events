@@ -13,8 +13,6 @@ class Event < ApplicationRecord
   scope :upcoming, -> { where('date > ?', Date.today) }
 
   def event_date_cannot_be_in_the_past
-    if date.present?
-      return errors.add(:date, "Event date can't be in the past") unless date >= Date.today
-    end
+    return errors.add(:date, "Event date can't be in the past") unless date.present? && date >= Date.today
   end
 end
