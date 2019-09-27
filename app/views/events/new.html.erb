@@ -1,4 +1,9 @@
-<h1>Create new event</h1>
+<h3>Create new event</h3>
+<% if @event.errors.any? %>
+  <% @event.errors.each do |key, message| %>
+    <h5><%= message %></h5>
+  <% end %>
+<% end %>
 <%= form_for @event do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
