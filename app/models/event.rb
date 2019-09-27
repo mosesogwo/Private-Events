@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Event < ApplicationRecord
   validates :name, presence: true
   validates :date, presence: true
@@ -6,6 +8,6 @@ class Event < ApplicationRecord
   has_many :attendances, foreign_key: 'attended_event_id'
   has_many :attendees, through: :attendances
 
-  scope :past, -> { where("date <= ?", Date.today) }
-  scope :upcoming, -> { where("date > ?", Date.today) }
+  scope :past, -> { where('date <= ?', Date.today) }
+  scope :upcoming, -> { where('date > ?', Date.today) }
 end

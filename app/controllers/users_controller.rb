@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class UsersController < ApplicationController
   def new
     @user = User.new
@@ -5,17 +7,17 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @upcoming_events = @user.created_events.where("date > ?", Date.today)
-    @past_events = @user.created_events.where("date <= ?", Date.today)
+    @upcoming_events = @user.created_events.where('date > ?', Date.today)
+    @past_events = @user.created_events.where('date <= ?', Date.today)
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
-      flash[:success] = "User successfully created"
+      flash[:success] = 'User successfully created'
       redirect_to @user
     else
-      flash[:danger] = "Error creating user"
+      flash[:danger] = 'Error creating user'
       render 'new'
     end
   end

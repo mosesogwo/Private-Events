@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Authentication', type: :feature do
@@ -12,14 +14,11 @@ RSpec.feature 'Authentication', type: :feature do
   end
 
   scenario 'registered user logs in' do
-    # User.create!(name: 'Paul', email: 'paul@gmail.com', password: '123456')
     sign_up_with('Paul', 'paul@gmail.com', '123456')
     visit login_path
     fill_in 'Email', with: 'paul@gmail.com'
     fill_in 'Password', with: '123456'
-    sleep(2)
     click_button 'Login'
-    sleep(3)
     expect(page).to have_content("You're logged in")
   end
 

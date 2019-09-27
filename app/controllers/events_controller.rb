@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
   before_action :logged_in?, only: :new
 
@@ -8,10 +10,10 @@ class EventsController < ApplicationController
   def create
     @event = current_user.created_events.build(event_params)
     if @event.save
-      flash[:success] = "Event successfully created"
+      flash[:success] = 'Event successfully created'
       redirect_to event_path(@event)
     else
-      flash.now[:danger] = "Event creation unsuccessful"
+      flash.now[:danger] = 'Event creation unsuccessful'
       render 'new'
     end
   end

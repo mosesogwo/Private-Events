@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.feature 'Event managment', type: :feature do
@@ -11,10 +13,8 @@ RSpec.feature 'Event managment', type: :feature do
     sign_in_with('paul@gmail.com', '123456')
     click_on 'Create Event'
     fill_in 'Name', with: "Paul's Event"
-    page.find('#event_date').set("2014-01-01")
-    sleep(2)
+    page.find('#event_date').set('2014-01-01')
     click_button 'Create event'
-    sleep(2)
     expect(page).to have_content('Event successfully created')
   end
 
@@ -26,7 +26,7 @@ RSpec.feature 'Event managment', type: :feature do
     click_on 'Submit'
   end
 
-  def sign_in_with(email, password)
+  def sign_in_with(_email, _password)
     visit login_path
     fill_in 'Email', with: 'paul@gmail.com'
     fill_in 'Password', with: '123456'
