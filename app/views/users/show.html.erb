@@ -1,0 +1,18 @@
+<h1><%= @user.name %>'s Page</h1>
+
+<h3>Created Events</h3>
+<h5>Upcoming Events</h5>
+<% @upcoming_events.each do |event| %>
+  <p><%= event.name %> --- <%= event.date %></p>
+<% end %>
+
+<h5>Past Events</h5>
+<% @past_events.each do |event| %>
+  <p><%= event.name %> --- <%= event.date %></p>
+<% end %>
+
+<h3>Attended Events</h3>
+<% @user.attended_events.each do |event|%>
+   <p><%= event.name %> --- <%= event.date %></p>
+<% end %>
+
